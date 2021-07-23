@@ -1,12 +1,12 @@
 <?php
-
+require_once './SqlDbHandler.php';
 // Définit la classe Brand comme dépendance de ce fichier
 require_once './models/Brand.php';
 
 /**
  * Réprésente un processeur
  */
-class Cpu
+class Cpu 
 {
     /**
      * Identifiant en base de données
@@ -47,11 +47,14 @@ class Cpu
     static public function findAll(): array
     {
         // Configure la connexion à la base de données
-        $databaseHandler = new PDO("mysql:host=localhost;dbname=computer", 'root', 'root');
+        $databaseHandler = new SqlDbHandler();
+        // die();
+        // var_dump($databaseHandler);
+        // $databaseHandler = new PDO("mysql:host=localhost;dbname=computer", 'root', 'root');
         // Envoie une requête dans le serveur de base de données
-        $statement = $databaseHandler->query('SELECT * FROM `cpus`');
+        // $statement = $databaseHandler->query('SELECT * FROM `cpus`');
         // Récupère tous les résultats de la requête
-        foreach ($statement->fetchAll() as $cpuData) {
+        foreach ($databaseHandler->statement->fetchAll('cpu') as $cpuData) {
             $cpus []= new Cpu(
                 $cpuData['id'],
                 $cpuData['name'],

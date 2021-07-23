@@ -27,7 +27,7 @@ switch ($_GET['type']) {
     <ul>
         <li>Type de composant</li>
         <li>Marque: <?= $component->getBrand()->getName() ?></li>
-        <li>Prix: <?= $component->getPrice() ?>€</li>
+        <li>Prix: <?= $component->getPrice() ?> €</li>
         <li>Caractéristiques supplémentaires</li>
     </ul>
 </div>

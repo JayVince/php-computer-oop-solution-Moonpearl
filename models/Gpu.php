@@ -3,6 +3,8 @@
 // Définit la classe Brand comme dépendance de ce fichier
 require_once './models/Brand.php';
 
+require_once './SqlDbHandler.php';
+
 /**
  * Réprésente une carte graphique
  */
@@ -43,6 +45,8 @@ class Gpu
     {
         // Configure la connexion à la base de données
         $databaseHandler = new PDO("mysql:host=localhost;dbname=computer", 'root', 'root');
+        // $databaseHandler = new SqlDbHandler();
+        
         // Envoie une requête dans le serveur de base de données
         $statement = $databaseHandler->query('SELECT * FROM `gpus`');
         // Récupère tous les résultats de la requête

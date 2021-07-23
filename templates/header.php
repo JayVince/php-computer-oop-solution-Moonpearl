@@ -1,10 +1,13 @@
 <?php
 
+require_once './SqlDbHandler.php';
 require_once './models/Cpu.php';
 require_once './models/Gpu.php';
 require_once './models/Hdd.php';
 require_once './models/Os.php';
 require_once './models/Ram.php';
+
+$databaseHandler = new SqlDbHandler(); die();
 
 // Récupère tous les processeurs en base de données
 $cpus = Cpu::findAll();
@@ -47,7 +50,7 @@ $rams = Ram::findAll();
                             </div>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <?php foreach ($cpus as $cpu): ?>
-                                <li><a class="dropdown-item" href="/component.php?type=cpu&id=<?= $cpu->getId() ?>"><?= $cpu->getName() ?></a></li>
+                                <li><a class="dropdown-item" href="component.php?type=cpu&id=<?= $cpu->getId() ?>"><?= $cpu->getName() ?></a></li>
                                 <?php endforeach; ?>
                             </ul>
                         </li>
@@ -58,7 +61,7 @@ $rams = Ram::findAll();
                             </div>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <?php foreach ($gpus as $gpu): ?>
-                                <li><a class="dropdown-item" href="/component.php?type=cpu&id=<?= $gpu->getId() ?>"><?= $gpu->getName() ?></a></li>
+                                <li><a class="dropdown-item" href="component.php?type=cpu&id=<?= $gpu->getId() ?>"><?= $gpu->getName() ?></a></li>
                                 <?php endforeach; ?>
                             </ul>
                         </li>
@@ -69,7 +72,7 @@ $rams = Ram::findAll();
                             </div>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <?php foreach ($hdds as $hdd): ?>
-                                <li><a class="dropdown-item" href="/component.php?type=cpu&id=<?= $hdd->getId() ?>"><?= $hdd->getName() ?></a></li>
+                                <li><a class="dropdown-item" href="component.php?type=cpu&id=<?= $hdd->getId() ?>"><?= $hdd->getName() ?></a></li>
                                 <?php endforeach; ?>
                             </ul>
                         </li>
@@ -80,7 +83,7 @@ $rams = Ram::findAll();
                             </div>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <?php foreach ($oss as $os): ?>
-                                <li><a class="dropdown-item" href="/component.php?type=cpu&id=<?= $os->getId() ?>"><?= $os->getName() ?></a></li>
+                                <li><a class="dropdown-item" href="component.php?type=cpu&id=<?= $os->getId() ?>"><?= $os->getName() ?></a></li>
                                 <?php endforeach; ?>
                             </ul>
                         </li>
@@ -91,7 +94,7 @@ $rams = Ram::findAll();
                             </div>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <?php foreach ($rams as $ram): ?>
-                                <li><a class="dropdown-item" href="/component.php?type=cpu&id=<?= $ram->getId() ?>"><?= $ram->getName() ?></a></li>
+                                <li><a class="dropdown-item" href="component.php?type=cpu&id=<?= $ram->getId() ?>"><?= $ram->getName() ?></a></li>
                                 <?php endforeach; ?>
                             </ul>
                         </li>
