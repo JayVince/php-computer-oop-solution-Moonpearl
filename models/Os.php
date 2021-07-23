@@ -34,7 +34,7 @@ class Os
     static public function findAll(): array
     {
         // Configure la connexion à la base de données
-        $databaseHandler = new PDO("mysql:host=localhost;dbname=php-config", 'root', 'root');
+        $databaseHandler = new PDO("mysql:host=localhost;dbname=computer", 'root', 'root');
         // Envoie une requête dans le serveur de base de données
         $statement = $databaseHandler->query('SELECT * FROM `os`');
         // Récupère tous les résultats de la requête
